@@ -53,9 +53,11 @@ public:
   }
   friend ostream& operator<<(ostream &out, const TVector &v)
   {
-    for (int i = 0; i < v.Size; i++)
-      out << v.pVector[i] << ' ';
-    return out;
+	  for (int i = 0; i < v.StartIndex; i++)
+		  out << "0" << "\t";
+	  for (int i = v.StartIndex; i < v.Size; i++)
+		  out << v.pVector[i] << "\t";
+	  return out;
   }
 };
 
